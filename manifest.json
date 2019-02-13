@@ -3,5 +3,9 @@
     "name": "LolEsports Extension",
     "version": "1.0.0",
 
-    "version_name": "1.0.0-alpha"
+    "version_name": "1.0.0-alpha",
+    "content_scripts": [{
+        "matches": ["https://*.lolesports.com/schedule*"],
+        "js": ["src/spoilers.js"]
+    }]
 }
