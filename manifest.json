@@ -3,7 +3,17 @@
     "name": "LolEsports Extension",
     "version": "1.0.0",
 
-    "version_name": "1.0.0-alpha",
+    "permissions": [
+        "https://*.lolesports.com/vod/*",
+        "https://prod-relapi.ewp.gg/persisted/gw/getEventDetails*",
+        "webRequest",
+        "storage"
+    ],
+
+    "background": {
+        "scripts": ["src/background.js"]
+    },
+
     "content_scripts": [{
         "matches": ["https://*.lolesports.com/schedule*"],
         "js": ["src/spoilers.js"]
