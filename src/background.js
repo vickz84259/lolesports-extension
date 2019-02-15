@@ -1,5 +1,16 @@
 let BASE_URL = 'https://prod-relapi.ewp.gg/persisted/gw';
-let pattern = `${BASE_URL}/getEventDetails*`;
+
+function addListener() {
+  let pattern = `${BASE_URL}/getEventDetails*`;
+  /* beautify ignore:start */
+  browser.webRequest.onCompleted.addListener(
+    saveData,
+    {
+      urls: [pattern],
+      types: ['xmlhttprequest']
+    });
+  /* beautify ignore:end */
+}
 
 async function saveData(result) {
   let id = result.url.match(/id=(\d+)/)[1];
@@ -22,20 +33,4 @@ async function saveData(result) {
   addListener();
 }
 
-function handleMessage(message, sender, sendResponse) {
-  return browser.storage.local.get(message.id);
-}
-
-browser.runtime.onMessage.addListener(handleMessage);
-
-function addListener() {
-  /* beautify ignore:start */
-  browser.webRequest.onCompleted.addListener(
-    saveData,
-    {
-      urls: [pattern],
-      types: ['xmlhttprequest']
-    });
-  /* beautify ignore:end */
-}
 addListener();
