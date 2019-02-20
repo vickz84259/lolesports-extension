@@ -34,14 +34,11 @@ async function getElement(id = null, selector = null) {
 }
 
 async function init() {
-  let videoPlayer = getElementById('video-player');
-
   let topDiv = getElementBySelector('.WatchVod');
   let nav = getElementBySelector('.WatchVod .nav');
   let placeholder = await getElementById('video-player-placeholder');
 
-  topDiv = await topDiv;
-  topDiv.outerHTML = `
+  (await topDiv).outerHTML = `
     <div id="page-container" class="main-section right-panel-container
         content-container">
       <div id="ember1023" class="ember-view tse-scrollable">
@@ -67,7 +64,7 @@ async function init() {
     </div>`;
   addStats();
 
-  videoPlayer = await videoPlayer;
+  let videoPlayer = await getElementById('video-player');
   videoPlayer.setAttribute('style', '');
 
   placeholder.appendChild(videoPlayer);
