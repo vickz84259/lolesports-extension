@@ -78,17 +78,13 @@ async function init() {
   placeholder.setAttribute('uuid', uuid);
 
   videoPlayer = await videoPlayer;
-  videoPlayer.setAttribute('style', 'width: 100%');
-
+  videoPlayer.setAttribute('style', '');
   placeholder.appendChild(videoPlayer);
 
-  let footer = await getElementBySelector('.Footer');
-  footer.setAttribute('style', 'padding-right: 20px; padding-left: 20px');
-  (await getElementBySelector('.stream-content-container')).appendChild(footer);
+  (await getElementBySelector('.stream-content-container')).appendChild(
+    await getElementBySelector('.Footer'));
 
-  let watchVod = await getElementBySelector('.WatchVod');
-  watchVod.setAttribute('style', 'min-height: 0px');
-  watchVod.appendChild(await nav);
+  (await getElementBySelector('.WatchVod')).appendChild(await nav);
 }
 
 init();
