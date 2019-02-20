@@ -34,14 +34,11 @@ async function getElement(id = null, selector = null) {
 }
 
 async function init() {
-  let placeholder = getElementById('video-player-placeholder');
   let videoPlayer = getElementById('video-player');
 
   let topDiv = getElementBySelector('.WatchVod');
   let nav = getElementBySelector('.WatchVod .nav');
-
-  placeholder = await placeholder;
-  let uuid = placeholder.getAttribute('uuid');
+  let placeholder = await getElementById('video-player-placeholder');
 
   topDiv = await topDiv;
   topDiv.outerHTML = `
@@ -57,8 +54,6 @@ async function init() {
               <span class="clearfix"></span>
               <div class="stream-container">
                 <div class="VideoPlayer">
-                  <div id="video-player-placeholder" uuid="">
-                  </div>
                 </div>
               </div>
               <div class="WatchVod">
@@ -72,12 +67,11 @@ async function init() {
     </div>`;
   addStats();
 
-  placeholder = await getElementById('video-player-placeholder');
-  placeholder.setAttribute('uuid', uuid);
-
   videoPlayer = await videoPlayer;
   videoPlayer.setAttribute('style', '');
+
   placeholder.appendChild(videoPlayer);
+  (await getElementBySelector('.VideoPlayer')).appendChild(placeholder);
 
   (await getElementBySelector('.stream-content-container')).appendChild(
     await getElementBySelector('.Footer'));
