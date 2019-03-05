@@ -20,7 +20,7 @@
         },
         {
             "matches": ["https://*.lolesports.com/vod/*"],
-            "js": ["src/stats.js"],
+            "js": ["src/handlebars.runtime.js", "src/template.js", "src/stats.js"],
             "css": ["src/app.css", "src/custom.css"]
         }
     ]
