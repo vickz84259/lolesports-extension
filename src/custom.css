@@ -1,0 +1,38 @@
+#video-player {
+  width: 100%;
+}
+
+.Footer {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.WatchVod {
+  min-height: 0px;
+}
+
+.EventMatchScore .match .teams {
+  border-top-width: 0px;
+}
+
+.team-matchup .team-matchup-blue-team .team-logo {
+  float: right;
+}
+
+.team-matchup .team-matchup-blue-team .acronym-record {
+  float: left;
+}
+
+.team-matchup .team-matchup-red-team .team-logo {
+  float: left;
+}
+
+.team-matchup .team-matchup-red-team .acronym-record {
+  float: right;
+}
+
+@media only screen and (min-width: 74.063em) {
+  .right-panel-container .stream-content-container {
+    margin-right: 356px
+  }
+}
