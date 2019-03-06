@@ -1,0 +1,46 @@
+<div id="stream-side-nav-container" class="side-panel-container">
+  <div class="tabs-container">
+    <div class="tabs-wrapper">
+      <ul class="tabs" data-tab="">
+        <li data-name="stats" class="side-nav-tab stats-tab larger-tab
+                survey-fire active" data-survey-key="stats-tab">
+          <a href="#panel2-1" style="display: block;" aria-selected="true" tabindex="0">Stats</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tabs-content-container">
+    <div class="tabs-content no-bottom">
+      <div class="content livestats-container active" id="panel2-1" aria-hidden="false">
+        <div class="teams-container">
+          <div id="ember1176" class="ember-view tse-scrollable">
+            <div class="tse-scrollbar" style="display: block;">
+              <div class="drag-handle" style="top: 2px; height: 354px;">
+              </div>
+            </div>
+            <div class="tse-scroll-content" style="width:391px;
+                    height: 539px;">
+              <div class="tse-content">
+                <div id="ember1190" class="ember-view team-matchup">
+                  <div class="team-matchup-teams-section">
+                    <div class="team-matchup-blue-team">
+                      {{> teamLogo team=teams.[0]}}
+                    </div>
+                    <div class="team-matchup-red-team">
+                      {{> teamLogo team=teams.[1]}}
+                    </div>
+                    <span class="clearfix"></span>
+                  </div>
+                </div>
+                <div class="teams">
+                </div>
+                <div id="ember1183" class="ember-view">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
