@@ -8,12 +8,11 @@
         "https://prod-relapi.ewp.gg/persisted/gw/getEventDetails*",
         "webNavigation",
         "https://slick.co.ke/v1/lolesports/*",
-        "webRequest",
         "storage"
     ],
 
     "background": {
-        "scripts": ["src/new_background.js"]
+        "scripts": ["src/background.js"]
     },
 
     "content_scripts": [{
