@@ -4,9 +4,10 @@
     "version": "1.0.0",
 
     "permissions": [
-        "https://*.lolesports.com/vod/*",
+        "https://*.lolesports.com/*",
         "https://prod-relapi.ewp.gg/persisted/gw/getEventDetails*",
-        "webRequest",
+        "webNavigation",
+        "https://slick.co.ke/v1/lolesports/*",
         "storage"
     ],
 

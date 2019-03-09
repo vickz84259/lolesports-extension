@@ -34,16 +34,16 @@ async function getElement(id = null, selector = null) {
 }
 
 async function init() {
-  // Getting the id from the url
-  let id = document.location.href.match(/\/vod\/(\d+)\//)[1];
-  let data = browser.storage.local.get(id);
-
   let topDiv = getElementBySelector('.WatchVod');
   let nav = getElementBySelector('.WatchVod .nav');
   let placeholder = await getElementById('video-player-placeholder');
 
   // This is needed since the partials are being precompiled as templates
   Handlebars.partials = Handlebars.templates;
+
+  // Getting the id from the url
+  let id = document.location.href.match(/\/vod\/(\d+)\//)[1];
+  let data = browser.storage.local.get(id);
 
   (await topDiv).outerHTML = Handlebars.templates['main']({
     'teams': (await data)[id].data.event.match.teams
