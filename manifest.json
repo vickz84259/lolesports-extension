@@ -4,14 +4,15 @@
     "version": "1.0.0",
 
     "permissions": [
-        "https://*.lolesports.com/vod/*",
+        "https://*.lolesports.com/*",
         "https://prod-relapi.ewp.gg/persisted/gw/getEventDetails*",
+        "webNavigation",
         "webRequest",
         "storage"
     ],
 
     "background": {
-        "scripts": ["src/background.js"]
+        "scripts": ["src/new_background.js"]
     },
 
     "content_scripts": [{
