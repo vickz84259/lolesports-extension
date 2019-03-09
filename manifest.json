@@ -7,6 +7,7 @@
         "https://*.lolesports.com/*",
         "https://prod-relapi.ewp.gg/persisted/gw/getEventDetails*",
         "webNavigation",
+        "https://slick.co.ke/v1/lolesports/*",
         "webRequest",
         "storage"
     ],
