@@ -48,6 +48,7 @@ async function init() {
   (await topDiv).outerHTML = Handlebars.templates['main']({
     'teams': (await data)[id].data.event.match.teams
   });
+  addStats();
 
   let videoPlayer = await getElementById('video-player');
   videoPlayer.setAttribute('style', '');
@@ -59,6 +60,28 @@ async function init() {
     await getElementBySelector('.Footer'));
 
   (await getElementBySelector('.WatchVod')).appendChild(await nav);
+}
+
+async function checkMatchDetails(id, matchNumber) {
+  while (true) {
+    console.log('here');
+    promiseObj = browser.storage.local.get(id);
+    let games = (await promiseObj)[id].data.event.match.games;
+
+    if ('details' in games[matchNumber - 1]) {
+      break;
+    }
+
+    await delay(timeout = 500);
+  }
+}
+
+async function addStats() {
+  let regexPattern = /\/vod\/(\d+)\/(\d{1})\/?/;
+  let [, id, matchNumber] = document.location.href.match(regexPattern);
+
+  let check = checkMatchDetails(id, matchNumber);
+  await check;
 }
 
 init();
