@@ -46,7 +46,8 @@ async function init() {
   let data = browser.storage.local.get(id);
 
   (await topDiv).outerHTML = Handlebars.templates['main']({
-    'teams': (await data)[id].data.event.match.teams
+    'teams': (await data)[id].data.event.match.teams,
+    'showSpinner': false
   });
   addStats();
 
@@ -64,7 +65,6 @@ async function init() {
 
 async function checkMatchDetails(id, matchNumber) {
   while (true) {
-    console.log('here');
     promiseObj = browser.storage.local.get(id);
     let games = (await promiseObj)[id].data.event.match.games;
 
