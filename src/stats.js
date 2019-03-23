@@ -60,7 +60,13 @@ async function init() {
   (await getElementBySelector('.stream-content-container')).appendChild(
     await getElementBySelector('.Footer'));
 
-  (await getElementBySelector('.WatchVod')).appendChild(await nav);
+  nav = await nav;
+  (await getElementBySelector('.WatchVod')).appendChild(nav);
+
+  let cookieButton = getElementBySelector(
+    '.riotbar-cookie-policy-v2.cookie-link.corner-button');
+  let streamSelector = getElementBySelector('.stream-selector');
+  nav.insertBefore((await cookieButton), (await streamSelector));
 }
 
 async function getIds(id, matchNumber) {

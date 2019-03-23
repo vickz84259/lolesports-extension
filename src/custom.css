@@ -106,3 +106,11 @@
 body {
   line-height: 1;
 }
+
+.riotbar-cookie-policy-v2.cookie-link.bottom-right {
+  border: 0px;
+  position: inherit !important;
+  width: 50%;
+  align-self: center;
+  background: #000 !important;
+}
