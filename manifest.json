@@ -6,6 +6,9 @@
     "permissions": [
         "https://*.lolesports.com/*",
         "https://prod-relapi.ewp.gg/persisted/gw/getEventDetails*",
+        "https://api.lolesports.com/api/v2/highlanderMatchDetails*",
+        "https://api.lolesports.com/api/v2/tournamentPlayerStats*",
+        "https://acs.leagueoflegends.com/v1/stats/game/*",
         "webNavigation",
         "https://slick.co.ke/v1/lolesports/*",
         "storage"
@@ -21,7 +24,12 @@
         },
         {
             "matches": ["https://*.lolesports.com/vod/*"],
-            "js": ["src/handlebars.runtime.js", "src/template.js", "src/stats.js"],
+            "js": [
+                "src/handlebars.runtime.js",
+                "src/helpers.js",
+                "src/template.js",
+                "src/stats.js"
+            ],
             "css": ["src/app.css", "src/custom.css"]
         }
     ]
